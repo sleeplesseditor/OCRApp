@@ -81,7 +81,7 @@ class App extends Component {
 
           <div>
             { this.state.uploads.map((value, index) => {
-              return <img key={index} src={value} width="100px" />
+              return <img key={index} src={value} alt="" width="100px" />
             }) }
           </div>
 

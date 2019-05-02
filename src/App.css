@@ -24,6 +24,8 @@
   grid-column-start: 1;
   grid-column-end: 5;
   padding: 16px;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
 
 .results .results__result {
