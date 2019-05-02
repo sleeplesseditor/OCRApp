@@ -28,7 +28,7 @@
 
 .results .results__result {
   display: flex;
-  border-bottom: 1px solid grey;
+  /* border-bottom: 1px solid grey; */
   padding-bottom: 8px;
   margin-bottom: 8px;
 }

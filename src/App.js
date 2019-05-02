@@ -4,6 +4,32 @@ import './App.css';
 var Tesseract = window.Tesseract;
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      uploads: [],
+      patterns: [],
+      documents: []
+    };
+  }
+
+  handleChange = (event) => {
+    if (event.target.files[0]) {
+      var uploads = []
+      for (var key in event.target.files) {
+        if (!event.target.files.hasOwnProperty(key)) continue;
+        let upload = event.target.files[key]
+        uploads.push(URL.createObjectURL(upload))
+      }
+      this.setState({
+        uploads: uploads
+      })
+    } else {
+      this.setState({
+        uploads: []
+      })
+    }
+  }
 
   render() {
     return (
@@ -16,11 +42,13 @@ class App extends Component {
         <section className="hero">
           <label className="fileUploaderContainer">
             Click here to upload documents
-            <input type="file" id="fileUploader" multiple />
+            <input type="file" id="fileUploader" onChange={this.handleChange} multiple />
           </label>
 
           <div>
-            { /* Previews will be shown here */ }
+          { this.state.uploads.map((value, index) => {
+            return <img key={index} src={value} width="100px" />
+          }) }
           </div>
 
           <button className="button">Generate</button>
@@ -31,7 +59,7 @@ class App extends Component {
 
           <div className="results__result">
             <div className="results__result__image">
-              <img width="250px" alt=""/>
+              <img width="350px" alt=""/>
             </div>
             <div className="results__result__info">
               <div className="results__result__info__codes">
