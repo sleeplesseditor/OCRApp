@@ -4,6 +4,7 @@ import './App.css';
 var Tesseract = window.Tesseract;
 
 class App extends Component {
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -99,9 +100,6 @@ class App extends Component {
                 <div className="results__result__info">
                   <div className="results__result__info__codes">
                     <small><strong>Confidence Score:</strong> {value.confidence}</small>
-                  </div>
-                  <div className="results__result__info__codes">
-                    <small><strong>Pattern Output:</strong> {value.pattern.map((pattern) => { return pattern + ', ' })}</small>
                   </div>
                   <div className="results__result__info__text">
                     <small><strong>Full Output:</strong> {value.text}</small>
