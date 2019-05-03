@@ -45,10 +45,29 @@
   font-size: 12px;
   color: white;
   font-weight: bold;
+  transition: all .2s ease-in-out;
+}
+
+.button-clear {
+  width: 100%;
+  background: #ff0e0e;
+  border-radius: 4px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: all .2s ease-in-out;
 }
 
 .button:hover, .button:active {
   background: #54bedb
+}
+
+.button-clear:hover, .button-clear:active {
+  background: #fa5252
 }
 
 .fileUploaderContainer {

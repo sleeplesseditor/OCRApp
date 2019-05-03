@@ -66,6 +66,14 @@ class App extends Component {
     }
   }
 
+  clearList = () => {
+    this.setState({
+      uploads: [],
+      patterns: [],
+      documents: []
+    })
+  }
+
   render() {
     return (
       <div className="app">
@@ -76,7 +84,7 @@ class App extends Component {
         { /* File uploader */ }
         <section className="hero">
           <label className="fileUploaderContainer">
-            Click here to upload documents
+            Click Here to Upload Documents
             <input type="file" id="fileUploader" onChange={this.handleChange} multiple />
           </label>
 
@@ -87,6 +95,7 @@ class App extends Component {
           </div>
 
           <button className="button" onClick={this.generateText}>Generate</button>
+          <button className="button-clear" onClick={this.clearList}>Clear</button>
         </section>
 
         { /* Results */ }
